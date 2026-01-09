@@ -4,7 +4,7 @@ A minimalist Windows system tray application that displays weather information w
 
 ![Screenshot](images/screenshot.png)
 
-### Dev
+### Development
 
 ```Development
 # Install dependencies
