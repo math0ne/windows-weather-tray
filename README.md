@@ -61,4 +61,5 @@ Weather functionality adapted from [re-start](https://github.com/math0ne/re-star
 
 ## License
 
-MIT
+MIT License - feel free to use and modify as needed.
+
