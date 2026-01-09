@@ -1,0 +1,54 @@
+{
+  "name": "windows-tray-weather",
+  "version": "1.0.0",
+  "description": "Windows system tray weather application",
+  "main": "src/main/main.cjs",
+  "scripts": {
+    "dev": "concurrently \"vite --config vite.config.mjs\" \"cross-env VITE_DEV_SERVER_URL=http://localhost:5173 electron .\"",
+    "dev:renderer": "vite --config vite.config.mjs",
+    "dev:electron": "cross-env VITE_DEV_SERVER_URL=http://localhost:5173 electron .",
+    "build:renderer": "vite build --config vite.config.mjs",
+    "build": "npm run build:renderer && electron-builder",
+    "start": "electron ."
+  },
+  "keywords": [
+    "electron",
+    "weather",
+    "tray"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@fontsource-variable/geist-mono": "^5.2.6",
+    "@fontsource/source-code-pro": "^5.2.7"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^5.1.0",
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1",
+    "svelte": "^5.35.2",
+    "vite": "^6.3.5"
+  },
+  "build": {
+    "appId": "com.windows-tray-weather",
+    "productName": "Tray Weather",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/main/**/*",
+      "src/preload/**/*",
+      "src/assets/**/*",
+      "out/**/*"
+    ],
+    "asarUnpack": [
+      "out/**/*"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "src/assets/main.ico"
+    }
+  }
+}

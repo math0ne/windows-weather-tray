@@ -1,0 +1,204 @@
+:root {
+    --bg-1: #1E1E1E;
+    --bg-2: oklch(23% 0 0);
+    --bg-3: oklch(27% 0 0);
+    --bg-4: oklch(31% 0 0);
+    --txt-4: oklch(40% 0 0);
+    --txt-3: oklch(50% 0 0);
+    --txt-2: oklch(75% 0 0);
+    --txt-1: oklch(90% 0 0);
+    --txt-err: oklch(70% 0.11 0);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg-1);
+    color: var(--txt-2);
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 600;
+    font-size: 100%;
+    line-height: 1.5;
+    overflow: hidden;
+}
+
+#app {
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+/* Frameless window styling */
+body {
+    /* border and shadow removed for cleaner look */
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 300;
+    color: var(--txt-1);
+}
+
+button {
+    background: none;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    padding: 0;
+    color: var(--txt-3);
+}
+
+button:hover {
+    color: var(--txt-2);
+}
+
+.panel {
+    padding: 1.5rem;
+    position: relative;
+}
+
+.panel-label,
+.widget-label {
+    position: absolute;
+    top: -14px;
+    left: 8px;
+    background-color: var(--bg-1);
+    color: var(--txt-4);
+    padding: 0 4px;
+    z-index: 10;
+}
+
+.widget-label:hover:not(:disabled) {
+    color: var(--txt-3);
+}
+
+.widget-label:disabled {
+    cursor: default;
+    color: var(--txt-4);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+input {
+    font: inherit;
+    color: inherit;
+    outline: none;
+}
+
+.error {
+    color: var(--txt-err);
+}
+
+/* Settings modal styling */
+.settings-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.settings-modal {
+    background: var(--bg-1);
+    border: 2px solid var(--bg-4);
+    padding: 2rem;
+    width: 90%;
+    max-width: 350px;
+}
+
+.settings-modal h2 {
+    margin-top: 0;
+    font-size: 1.25rem;
+}
+
+.settings-row {
+    margin-bottom: 1rem;
+}
+
+.settings-row label {
+    display: block;
+    margin-bottom: 0.25rem;
+    color: var(--txt-3);
+}
+
+.settings-row input {
+    width: 100%;
+    background: var(--bg-2);
+    border: 1px solid var(--bg-4);
+    padding: 0.5rem;
+    color: var(--txt-1);
+}
+
+.settings-row input:focus {
+    border-color: var(--txt-3);
+}
+
+.settings-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+}
+
+.settings-actions button {
+    padding: 0.5rem 1rem;
+    background: var(--bg-3);
+    border: 1px solid var(--bg-4);
+    color: var(--txt-2);
+}
+
+.settings-actions button:hover {
+    background: var(--bg-4);
+    color: var(--txt-1);
+}
+
+.settings-actions button.primary {
+    background: var(--txt-3);
+    color: var(--bg-1);
+}
+
+.settings-actions button.primary:hover {
+    background: var(--txt-2);
+}
+
+/* Toggle switches */
+.toggle-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.25rem;
+}
+
+.toggle-group button {
+    padding: 0.5rem 1rem;
+    background: var(--bg-2);
+    border: 1px solid var(--bg-4);
+    color: var(--txt-3);
+}
+
+.toggle-group button.active {
+    background: var(--txt-3);
+    color: var(--bg-1);
+    border-color: var(--txt-3);
+}
+
+.toggle-group button:hover {
+    border-color: var(--txt-3);
+}
