@@ -7,7 +7,7 @@ let tray = null;
 
 function createTray() {
   // Load tray icon from assets directory (16x16 PNG)
-  const iconPath = path.join(__dirname, '../assets/tray.png');
+  const iconPath = path.join(__dirname, '../assets/trayv2.png');
   const icon = nativeImage.createFromPath(iconPath);
 
   tray = new Tray(icon);
