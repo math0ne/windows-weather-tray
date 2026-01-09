@@ -30,6 +30,7 @@ function createSettingsWindow() {
     show: false,
     frame: false,
     resizable: false,
+    backgroundColor: '#1E1E1E',
     title: 'Weather Settings',
     webPreferences: {
       preload: preloadPath,
