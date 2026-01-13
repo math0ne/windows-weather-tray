@@ -35,6 +35,7 @@
     "appId": "com.windows-tray-weather",
     "productName": "Tray Weather",
     "copyright": "Copyright © 2025",
+    "publish": null,
     "directories": {
       "output": "dist"
     },
@@ -49,12 +50,28 @@
     ],
     "win": {
       "target": [
-        "nsis",
-        "portable"
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        },
+        {
+          "target": "portable",
+          "arch": ["x64"]
+        }
       ],
       "icon": "src/assets/main.ico",
       "publisherName": "Tray Weather",
       "verifyUpdateCodeSignature": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "differentialPackage": false
+    },
+    "portable": {
+      "artifactName": "${productName}-${version}-portable.${ext}"
     }
   }
 }
