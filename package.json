@@ -34,6 +34,7 @@
   "build": {
     "appId": "com.windows-tray-weather",
     "productName": "Tray Weather",
+    "copyright": "Copyright © 2025",
     "directories": {
       "output": "dist"
     },
@@ -47,8 +48,13 @@
       "out/**/*"
     ],
     "win": {
-      "target": "nsis",
-      "icon": "src/assets/main.ico"
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "icon": "src/assets/main.ico",
+      "publisherName": "Tray Weather",
+      "verifyUpdateCodeSignature": false
     }
   }
 }

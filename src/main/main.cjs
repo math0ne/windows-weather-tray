@@ -5,6 +5,9 @@ const { setupIPCHandlers } = require('./ipc-handlers.cjs');
 
 let tray = null;
 
+// Set app name for Windows startup
+app.setName('Tray Weather');
+
 // Quit when all windows are closed, except on macOS
 app.on('window-all-closed', () => {
   // Keep app running with just tray icon

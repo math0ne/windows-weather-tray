@@ -20,6 +20,10 @@ function createTray() {
 
   // Handle right click - show context menu
   tray.on('right-click', () => {
+    // Check current startup setting
+    const loginSettings = app.getLoginItemSettings();
+    const isEnabled = loginSettings.openAtLogin;
+
     const contextMenu = Menu.buildFromTemplate([
       {
         label: 'Set Location',
@@ -28,7 +32,20 @@ function createTray() {
         }
       },
       {
-        type: 'separator'
+        label: 'Run at Startup',
+        type: 'checkbox',
+        checked: isEnabled,
+        click: () => {
+          const currentSettings = app.getLoginItemSettings();
+          const newState = !currentSettings.openAtLogin;
+
+          app.setLoginItemSettings({
+            openAtLogin: newState,
+            openAsHidden: true,
+            name: 'Tray Weather',
+            args: []
+          });
+        }
       },
       {
         label: 'Exit',
